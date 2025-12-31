@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  calculator:
+    build: ./calculator_service
+
+  api:
+    build: ./api_service
+    ports:
+      - "8000:8000"
+    depends_on:
+      - calculator
